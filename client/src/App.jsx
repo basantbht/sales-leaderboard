@@ -5,7 +5,7 @@ import Leaderboard from './components/Leaderboard';
 import AddSaleForm from './components/AddSaleForm';
 import { FaTrophy } from 'react-icons/fa';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_BACKEND_URI || 'http://localhost:5000/api';
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);

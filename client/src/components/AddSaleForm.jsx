@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AddSaleForm.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_BACKEND_URI || 'http://localhost:5000/api';
 
 const AddSaleForm = ({ onSaleAdded, onCancel }) => {
   const [formData, setFormData] = useState({
