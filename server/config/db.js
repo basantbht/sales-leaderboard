@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sales-leaderboard', {
+    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://root:root@cluster0.0iazczl.mongodb.net/sales-leaderboard', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
