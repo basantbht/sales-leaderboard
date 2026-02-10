@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AddSaleForm.css';
 
-const API_URL = import.meta.env.VITE_BACKEND_URI || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_BACKEND_URI || 'http://localhost:5000';
 
 const AddSaleForm = ({ onSaleAdded, onCancel }) => {
   const [formData, setFormData] = useState({
@@ -49,7 +49,7 @@ const AddSaleForm = ({ onSaleAdded, onCancel }) => {
       const agentName = formData.agentName.trim();
       
       // Send single sale record with numberOfSales field
-      const response = await axios.post(`${API_URL}/sales`, {
+      const response = await axios.post(`${API_URL}/api/sales`, {
         agentName: agentName,
         amount: amount,
         numberOfSales: numberOfSales

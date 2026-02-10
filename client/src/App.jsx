@@ -5,7 +5,7 @@ import Leaderboard from './components/Leaderboard';
 import AddSaleForm from './components/AddSaleForm';
 import { FaTrophy } from 'react-icons/fa';
 
-const API_URL = import.meta.env.VITE_BACKEND_URI || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_BACKEND_URI || 'http://localhost:5000';
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -17,7 +17,7 @@ function App() {
     try {
       setLoading(true);
       setError(null);
-      const response = await axios.get(`${API_URL}/sales/leaderboard`);
+      const response = await axios.get(`${API_URL}/api/sales/leaderboard`);
       if (response.data.success) {
         setLeaderboardData(response.data.data);
       }
